@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yonas Blog</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="header"><%- include("partials/header.ejs") %></div>
+    <div class="body">
+      <div class="section-1">
+        <div class="panel-container posts-panel">
+          <h1 class="panel-title posts-text">Posts</h1>
+          <% if (posts.length == 0) { %>
+          <div class="no-post">
+            <img
+              src="images/no_post.png"
+              alt="No post image"
+              class="no-post-img" />
+            <button class="btn post-btn add-post-btn">Start Writing</button>
+          </div>
+          <% } %> <% posts.forEach((postElement) => { %>
+          <div class="post-card container">
+            <div class="modify-btn">
+              <button
+                class="edit-btn"
+                data-title="<%= postElement.title %>"
+                data-post="<%= postElement.post %>"
+                data-author="<%= postElement.author %>"
+                data-id="<%= postElement.id %>">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button class="delete-btn" data-id="<%= postElement.id %>">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+            <h1 class="card-title"><%= postElement.title%></h1>
+            <p class="body-text"><%= postElement.post %></p>
+            <div class="card-info">
+              <h3 class="author-text">By <%= postElement.author %></h3>
+              <p class="time"><%= postElement.time %></p>
+            </div>
+          </div>
+
+          <% }); %>
+        </div>
+      </div>
+
+      <div class="section-2">
+        <div class="panel-container add-post-panel">
+          <h1 class="panel-title add-post-text">Add Post</h1>
+          <form class="post-form container" action="/submit/post" method="post">
+            <label for="title">Title</label>
+            <input
+              required
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Post title..." />
+            <label for="post">Post</label>
+            <textarea
+              required
+              id="post"
+              name="post"
+              placeholder="Post message..."></textarea>
+            <label for="author">Author</label>
+            <input
+              required
+              type="text"
+              id="author"
+              name="author"
+              placeholder="Author..." />
+            <input type="submit" id="submit" class="btn" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer"><%- include("partials/footer.ejs") %></div>
+    <script src="js/index.js"></script>
+  </body>
+</html>

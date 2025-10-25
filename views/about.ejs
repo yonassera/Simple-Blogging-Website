@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale= 1.0, width=device-width" />
+    <title>About</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="header"><%- include("partials/header.ejs") %></div>
+    <div class="body">
+      <div class="about">
+        <h1 class="panel-title">About</h1>
+        <p class="body-text">
+          This project was created as my capstone assignment from Angela Yu’s
+          course. The goal was to take everything I’ve learned so far HTML, CSS,
+          JavaScript, and backend development and bring it all together in a
+          single full-stack web app. I used Node.js with Express for the
+          backend, and EJS for rendering dynamic pages. On the frontend, I kept
+          things simple and built the UI using pure CSS, which helped me
+          practice writing my own styles instead of relying on frameworks. The
+          project is a combination of a simple blog website and a to-do app,
+          which allowed me to practice CRUD operations (Create, Read, Update,
+          Delete) in a real-world style project. This was a big milestone for me
+          because it connected the dots between frontend and backend
+          development, and gave me hands-on experience with how data flows in a
+          web app.
+        </p>
+        <h2 class="panel-title h2-t">Features</h2>
+        <h3 class="panel-title h3-t">📝Blog Website</h3>
+        <ul class="body-text">
+          <li>Create new blog posts</li>
+          <li>View all posts</li>
+          <li>Edit existing posts</li>
+          <li>Delete posts</li>
+        </ul>
+        <h3 class="panel-title h3-t">✅To-Do App</h3>
+        <ul class="body-text">
+          <li>Add new tasks</li>
+          <li>Mark tasks as complete</li>
+          <li>Delete tasks</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer"><%- include("partials/footer.ejs") %></div>
+  </body>
+  <script src="js/index.js"></script>
+</html>

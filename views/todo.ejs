@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Todo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="header"><%- include("partials/header.ejs") %></div>
+    <div class="body">
+      <div class="todo-panel">
+        <h1 class="panel-title todo-list-text">TODO LIST</h1>
+        <form action="/submit/todo" class="twin-content" method="post">
+          <input type="text" placeholder="Add task..." name="task" required />
+          <input type="submit" value="Add" class="btn" />
+        </form>
+
+        <% if(todos) todos.forEach((todo)=> { %>
+
+        <div class="check-row">
+          <label>
+            <input type="checkbox" />
+            <span> <%= todo.task %> </span>
+          </label>
+
+          <form action="" method="post" class="todoDeletingForm">
+            <button data-id="<%= todo.id %>" class="del-todo">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </form>
+        </div>
+
+        <% }); %>
+      </div>
+    </div>
+    <div class="footer"><%- include("partials/footer.ejs") %></div>
+  </body>
+  <script src="js/index.js"></script>
+</html>

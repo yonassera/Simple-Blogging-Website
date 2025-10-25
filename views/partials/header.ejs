@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+US+Trad:wght@100..400&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header-container">
+      <h1 id="logo-text">Yonas Blog</h1>
+      <div class="page-link">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/todo">Todo</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+      <div class="header-btn">
+        <% if (addPost == false) { %>
+        <button id="post-btn" style="display: none">
+          <i class="fa-regular fa-plus-square"></i>
+        </button>
+        <% } else if (addPost == true) { %>
+        <button class="post-btn">
+          <i class="fa-regular fa-plus-square"></i>
+        </button>
+        <% } %>
+
+        <button id="nav-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- overlay -->
+    <div class="overlay">
+      <div class="add-post-panel-m overlay-panel">
+        <h1 class="panel-title mobile-panel-title">Add Post</h1>
+        <form class="container post-form" action="/submit/post" method="post">
+          <label for="title-a">Title</label>
+          <input
+            required
+            type="text"
+            id="title-a"
+            name="title"
+            placeholder="Post title..." />
+          <label for="post-a">Post</label>
+          <textarea
+            required
+            id="post-a"
+            name="post"
+            placeholder="Post message..."></textarea>
+          <label for="author-a">Author</label>
+          <input
+            required
+            type="text"
+            id="author-a"
+            name="author"
+            placeholder="Author..." />
+          <div class="twin-content">
+            <input type="button" class="cancel btn" value="Cancel" />
+            <input type="submit" class="submit btn" value="Submit" />
+          </div>
+        </form>
+      </div>
+
+      <div class="edit-post-panel overlay-panel">
+        <form
+          id="edit-form"
+          class="container post-form"
+          action="/edit/post"
+          method="post">
+          <h1 class="panel-title mobile-panel-title">Edit Post</h1>
+          <label for="title-e">Title</label>
+          <input
+            required
+            type="text"
+            id="title-e"
+            name="title"
+            placeholder="Post title..." />
+          <label for="post-e">Post</label>
+          <textarea
+            required
+            id="post-e"
+            name="post"
+            placeholder="Post message..."></textarea>
+          <label for="author-e">Author</label>
+          <input
+            required
+            type="text"
+            id="author-e"
+            name="author"
+            placeholder="Author..." />
+          <div class="twin-content">
+            <input type="button" class="cancel btn" value="Cancel" />
+            <input
+              type="submit"
+              id="submit-edited"
+              class="submit btn"
+              value="Save" />
+          </div>
+        </form>
+      </div>
+
+      <div class="confirm-delete-panel container overlay-panel">
+        <h2 class="panel-title delete-title">Delete confirmation</h2>
+        <p class="body-text">Do you really want to delete the post?</p>
+        <div class="twin-content">
+          <button class="cancel btn">Cancel</button>
+          <form id="delete-form" action="/delete/post" method="post">
+            <button id="yes-delete" class="delete btn">Yes, Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- overlay -->
+  </body>
+</html>
