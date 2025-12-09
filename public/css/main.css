@@ -358,6 +358,88 @@ ul {
   margin: 0.5rem;
 }
 
+/* CSS for Header*/
+
+.header-container {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  background-color: #1f48ff;
+  border-radius: 12px;
+  z-index: 2000;
+}
+
+#logo-text {
+  font-family: "Playwrite US Trad";
+  font-size: 1.3rem;
+  font-weight: 300;
+  flex: 5;
+  margin: 10px;
+  color: white;
+}
+
+.page-link ul {
+  list-style: none;
+  font-family: sans-serif;
+  display: flex;
+  gap: 1rem;
+  margin: 10px 40px;
+}
+
+.page-link a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: white;
+}
+
+.page-link a:active {
+  opacity: 0.7;
+}
+
+.header-btn {
+  display: none;
+}
+
+/* CSS for Footer*/
+
+footer {
+  /* position: sticky; */
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background-color: #1f48ff;
+  border-radius: 12px;
+  justify-content: center;
+  z-index: 2000;
+}
+
+footer > p {
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  color: white;
+  text-align: center;
+  margin: auto 0;
+}
+
+.social-div {
+  background-color: #ffff;
+  padding: 3px 5px;
+  border-radius: 50px;
+  display: flex;
+  gap: 0.5rem;
+  margin: 5px;
+}
+
+.social-div > a {
+  text-decoration: none;
+  color: #1f48ff;
+}
+
+.social-div > a:visited {
+  text-decoration: none;
+  color: #1f48ff;
+}
+
 @media (max-width: 767px) {
   body {
     margin: 0;
@@ -383,6 +465,77 @@ ul {
   .about {
     width: 90%;
   }
+
+  /* Header */
+
+  .header-container {
+    border-radius: 0;
+  }
+
+  #logo-text {
+    font-size: 1.2rem;
+  }
+
+  .header-btn {
+    display: flex;
+    gap: 6px;
+    margin-right: 12px;
+  }
+
+  .header-btn > button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .header-btn > button:hover {
+    cursor: pointer;
+  }
+
+  .header-btn > button:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  .page-link {
+    display: none;
+    position: fixed;
+    top: 63.33px;
+    right: 6px;
+    background-color: #1f48ff;
+    border-radius: 6px;
+    z-index: 1000;
+    transition: all 0.5s;
+  }
+
+  .page-link.active {
+    display: block;
+  }
+
+  .page-link ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    width: 70px;
+    margin: 5px;
+    padding: 0;
+  }
+
+  /* Footer */
+
+  footer {
+    border-radius: 0;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  footer > p {
+    margin-top: 12px;
+    font-size: 0.85rem;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -404,5 +557,25 @@ ul {
 
   .panel-title {
     font-size: 1.2rem;
+  }
+
+  /* Header */
+
+  .header-container {
+    border-radius: 0;
+  }
+
+  #logo-text {
+    font-size: 1.2rem;
+  }
+
+  /* Footer */
+
+  footer {
+    border-radius: 0;
+  }
+
+  footer > p {
+    font-size: 0.85rem;
   }
 }
