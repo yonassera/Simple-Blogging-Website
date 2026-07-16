@@ -2,7 +2,21 @@
 
 A full-stack web app built as my capstone assignment from Angela Yu's Web Development course. The project combines a blog and a to-do app, bringing together everything covered in the course HTML, CSS, JavaScript, and backend development into one cohesive project.
 
-![Site Preview](img/site_preview.gif)
+![Home](img/home.png)
+
+![Home with Post](img/home-with-post.png)
+
+![Add Post Popup](img/add-post-popup.png)
+
+![Edit Post](img/edit-post.png)
+
+![To-Do](img/mobile-todo.png)
+
+![Mobile Home](img/mobile-home.png)
+
+![Mobile Menu](img/mobile-menu-popup.png)
+
+![Tablet Mode](img/tablet-mode-home.png)
 
 ## About
 
