@@ -1,8 +1,15 @@
-body {
+html {
+  height: 100vh;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+}
+
+body {
+  flex: 1;
   background-color: #f4f6ff;
+  display: flex;
+  flex-direction: column;
 }
 
 .no-scroll {
@@ -401,9 +408,12 @@ ul {
 }
 
 /* CSS for Footer*/
+.footer {
+  position: sticky;
+  bottom: 0;
+}
 
 footer {
-  /* position: sticky; */
   display: flex;
   gap: 1rem;
   align-items: center;
