@@ -1,6 +1,6 @@
 # Simple Blogging Website
 
-A full-stack web app built as my capstone assignment from Angela Yu's Web Development course. The project combines a blog and a to-do app, bringing together everything covered in the course — HTML, CSS, JavaScript, and backend development — into one cohesive project.
+A full-stack web app built as my capstone assignment from Angela Yu's Web Development course. The project combines a blog and a to-do app, bringing together everything covered in the course HTML, CSS, JavaScript, and backend development into one cohesive project.
 
 ![Site Preview](img/site_view.mp4)
 
@@ -52,7 +52,7 @@ npm install
 ### Running the App
 
 ```bash
-npm start
+node app.js
 ```
 
 Then open your browser and go to `http://localhost:3000`.
